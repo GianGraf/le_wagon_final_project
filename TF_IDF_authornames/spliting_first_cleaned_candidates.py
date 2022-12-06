@@ -1,16 +1,12 @@
-from first_cleaning_raw_authors import first_cleaning_raw_authors
+from TF_IDF_authornames.first_cleaning_raw_authors import first_cleaning_raw_authors
 
-def spliting_first_cleaned_candidates(speicherpfad, file_name_list):
+def spliting_first_cleaned_candidates(speicherpfad):
     """the first cleaned candidates are often still strings in the form of sentences,
     this functions seperates those sentences into individual words, that are then
     being furtherly preprocessed.
 
     Args: (same as before)
         speicherpfad (str): savingspath, where the pdfs are saved under
-
-        file_name_list (list of strings): Here a list strings is requiered, this list has to
-        contain all the names of the pds that are in the folder in the correct order of how they
-        will then be read by the code
 
     Returns:
         initially_cleaned_andspererates_candidates: list of list, the elements of the sublist are strings and
@@ -21,7 +17,7 @@ def spliting_first_cleaned_candidates(speicherpfad, file_name_list):
     #initiate the empty output container
     initially_cleaned_andspererates_candidates=[]
     #call the results from the importet and preceeding function
-    initially_cleaned_candidates=first_cleaning_raw_authors(speicherpfad, file_name_list)
+    initially_cleaned_candidates=first_cleaning_raw_authors(speicherpfad)
     #loop over the papers
     for i in initially_cleaned_candidates:
         #initiate a temporay list
@@ -36,4 +32,4 @@ def spliting_first_cleaned_candidates(speicherpfad, file_name_list):
     return initially_cleaned_andspererates_candidates
 
 if __name__ =="__main__":
-    print(spliting_first_cleaned_candidates('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data', ['asset_prcing_1.pdf','asset_prcing_2.pdf', 'asset_prcing_3.pdf']))
+    print(len(spliting_first_cleaned_candidates('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))

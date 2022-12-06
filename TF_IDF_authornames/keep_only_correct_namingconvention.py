@@ -1,6 +1,6 @@
-from remove_2lettershort_candidates import remove_2lettershort_candidates
+from TF_IDF_authornames.remove_2lettershort_candidates import remove_2lettershort_candidates
 
-def keep_only_correct_namingconvention(speicherpfad, file_name_list):
+def keep_only_correct_namingconvention(speicherpfad):
     """Here the candidates are furtherly filteres based on how they are written, only the ones
     with a fist Capital letter and then non-capital letters are furtherly considered as candidates.
 
@@ -23,7 +23,7 @@ def keep_only_correct_namingconvention(speicherpfad, file_name_list):
     #initiate the output container
     cleaned_separated_longerthan2letters_namingconvention_candidates=[]
     #call the previous results
-    input=remove_2lettershort_candidates(speicherpfad, file_name_list)
+    input=remove_2lettershort_candidates(speicherpfad)
     #iterate over the papers
     for i in input:
     #initiate a temporary list
@@ -37,4 +37,4 @@ def keep_only_correct_namingconvention(speicherpfad, file_name_list):
     return cleaned_separated_longerthan2letters_namingconvention_candidates
 
 if __name__ =="__main__":
-    print(keep_only_correct_namingconvention('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data', ['asset_prcing_1.pdf','asset_prcing_2.pdf', 'asset_prcing_3.pdf']))
+    print(len(keep_only_correct_namingconvention('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))

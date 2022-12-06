@@ -1,6 +1,6 @@
-from keep_only_correct_namingconvention import keep_only_correct_namingconvention
+from TF_IDF_authornames.keep_only_correct_namingconvention import keep_only_correct_namingconvention
 
-def globalize_authornamelist(speicherpfad, file_name_list):
+def globalize_authornamelist(speicherpfad):
     """this function produces one global list of author names that can latter be removed
     from text in the same manner stopwords are being removed.
 
@@ -19,7 +19,7 @@ def globalize_authornamelist(speicherpfad, file_name_list):
     """
 
     #call the output from the previous function
-    cleaned_separated_longerthan2letters_namingconvention_candidates=keep_only_correct_namingconvention(speicherpfad, file_name_list)
+    cleaned_separated_longerthan2letters_namingconvention_candidates=keep_only_correct_namingconvention(speicherpfad)
     #initiate the output container
     global_authorlist=[]
     #initiate a temporary variante for the second task as well, will lateet be deleted
@@ -37,4 +37,4 @@ def globalize_authornamelist(speicherpfad, file_name_list):
     return global_authorlist
 
 if __name__ =="__main__":
-    print(globalize_authornamelist('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data', ['asset_prcing_1.pdf','asset_prcing_2.pdf', 'asset_prcing_3.pdf']))
+    print(globalize_authornamelist('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))

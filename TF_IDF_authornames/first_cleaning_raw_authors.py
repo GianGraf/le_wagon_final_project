@@ -1,6 +1,6 @@
-from extract_raw_authorcandidates import extract_raw_authorcandidates
+from TF_IDF_authornames.extract_raw_authorcandidates import extract_raw_authorcandidates
 
-def first_cleaning_raw_authors(speicherpfad, file_name_list):
+def first_cleaning_raw_authors(speicherpfad):
     """This fucntion does a initial cleaning of the authorcandidates:
         1. it removes ".", "," and white space to the left and right of the strings
         2. it removes all list entries who are only 1 character long, as they must be noise, no
@@ -8,10 +8,6 @@ def first_cleaning_raw_authors(speicherpfad, file_name_list):
 
     Args: (same as before)
         speicherpfad (str): savingspath, where the pdfs are saved under
-
-        file_name_list (list of strings): Here a list strings is requiered, this list has to
-        contain all the names of the pds that are in the folder in the correct order of how they
-        will then be read by the code
 
     Returns:
         initially_cleaned_candidates: a initially cleaned list of lists of author candidates..
@@ -22,7 +18,7 @@ def first_cleaning_raw_authors(speicherpfad, file_name_list):
     #create an empty list that can be returned to carry the results
     initially_cleaned_candidates=[]
       #call the result from the called function
-    input=extract_raw_authorcandidates(speicherpfad, file_name_list)
+    input=extract_raw_authorcandidates(speicherpfad)
 
     #itterate over the papers (first level of list in list)
     for papers in input:
@@ -46,4 +42,4 @@ def first_cleaning_raw_authors(speicherpfad, file_name_list):
     return initially_cleaned_candidates
 
 if __name__ =="__main__":
-    print(first_cleaning_raw_authors('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data', ['asset_prcing_1.pdf','asset_prcing_2.pdf', 'asset_prcing_3.pdf']))
+    print(len(first_cleaning_raw_authors('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))
