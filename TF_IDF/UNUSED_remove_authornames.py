@@ -1,4 +1,4 @@
-from TF_IDF.UNSUED_remove_stopwords import remove_stopwords
+from TF_IDF.UNUSED_remove_stopwords import remove_stopwords
 from TF_IDF_authornames.globalize_authornamelist import globalize_authornamelist
 from nltk.tokenize import word_tokenize
 

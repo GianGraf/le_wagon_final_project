@@ -1,7 +1,7 @@
 import nltk
 from nltk.corpus import stopwords
 
-from TF_IDF_authornames .globalize_authornamelist import globalize_authornamelist
+from TF_IDF_authornames.globalize_authornamelist import globalize_authornamelist
 
 def importandcombine_stopwords_authornames(speicherpfad):
     """This function imports the stopwords from nltk and combines them with the authornames from
