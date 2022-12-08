@@ -19,6 +19,7 @@ def import_preprocessed_text_file(speicherpfad):
     list_of_shortend_papers=reduce_text_until_references(speicherpfad)
     return list_of_shortend_papers
 
+
 if __name__ == "__main__":
     print(import_preprocessed_text_file('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
     print('----------------------------------')

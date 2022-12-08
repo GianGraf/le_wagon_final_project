@@ -7,10 +7,6 @@ def globalize_authornamelist(speicherpfad):
     Args: (same as before)
         speicherpfad (str): savingspath, where the pdfs are saved under
 
-        file_name_list (list of strings): Here a list strings is requiered, this list has to
-        contain all the names of the pds that are in the folder in the correct order of how they
-        will then be read by the code
-
     Returns:
         global_authorlist: list of strings
         this list contains all the authornames that could be extracted from the
