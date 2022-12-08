@@ -36,4 +36,4 @@ def secondary_preprocessing(speicherpfad):
 if __name__ == "__main__":
     print(secondary_preprocessing('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
     print('----------------------------------')
-    print(len(secondary_preprocessing('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))
+    print(type(secondary_preprocessing('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[3]))

@@ -38,7 +38,7 @@ def remove_stopwords(speicherpfad):
             if w not in stop_words:
                 temp_list.append(w)
         paper_list_nostopwords.append(temp_list)
-    return paper_list_nostopwords
+    return paper_list_nostopwords, stopwords
 
 if __name__ == "__main__":
     print(remove_stopwords('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
