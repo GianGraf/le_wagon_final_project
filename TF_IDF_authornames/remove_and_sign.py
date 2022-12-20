@@ -15,7 +15,7 @@ def remove_and_sign(speicherpfad):
         list_of_texts: it returns the same variable as it calls from the function multiple_pdfs_to_list,
         however withpout the &-signs.
     """
-    list_of_texts=import_pdfs(speicherpfad)
+    list_of_texts, filenames =import_pdfs(speicherpfad)
     for papers in list_of_texts:
         papers=papers.replace('&', '')
     return list_of_texts

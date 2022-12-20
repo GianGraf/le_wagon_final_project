@@ -16,7 +16,7 @@ def reduce_text_until_references(speicherpfad):
         to the part until the last mention of the word (References)
     """
     #import the output from the previous py file
-    input=import_pdf_text(speicherpfad)
+    input, filenames =import_pdf_text(speicherpfad)
     #initiate the output container
     list_of_shortend_papers=[]
     #itterate over the individual pdfs
@@ -45,6 +45,6 @@ def reduce_text_until_references(speicherpfad):
     return list_of_shortend_papers
 
 if __name__ == "__main__":
-    print(reduce_text_until_references('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
+    print(reduce_text_until_references('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[0])
     print('----------------------------------')
     print(len(reduce_text_until_references('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))

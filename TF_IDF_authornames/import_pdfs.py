@@ -36,7 +36,7 @@ def import_pdfs(speicherpfad):
     list_of_papers=[]
     for file in filenames:
         list_of_papers.append(read_file(speicherpfad, file))
-    return list_of_papers
+    return list_of_papers, filenames
 
 if __name__ =="__main__":
-    print(len(import_pdfs('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))
+    print((import_pdfs('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[-1]))

@@ -1,4 +1,4 @@
-from TF_IDF.remove_stopwords_and_authornames import remove_stopwords_and_authornames
+from TF_IDF.stemming import stemming
 from TF_IDF.secondary_preprocessing import secondary_preprocessing
 from  sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -15,7 +15,7 @@ def tf_idf_transformer(speicherpfad):
     Returns: X: the fit_transformed TF_IDF Vectorizer
     """
     #load the text fromt he previous step
-    paper_list_nostopwords_noauthornames=remove_stopwords_and_authornames(speicherpfad)
+    paper_list_nostopwords_noauthornames=stemming(speicherpfad)
 
     intermediary_list=[]
     listof_secondarily_preprocessed_text=secondary_preprocessing(speicherpfad)
@@ -28,13 +28,16 @@ def tf_idf_transformer(speicherpfad):
     paper_list_nostopwords_noauthornames=intermediary_list
 #Use the tf idf own vectorizer, as the transformer requieres a vectorizes input
     vectorizer = TfidfVectorizer(stop_words= 'english')
+    #, use_idf=True
     X = vectorizer.fit_transform(paper_list_nostopwords_noauthornames)
-
+    vocab=vectorizer.vocabulary_
+    vocab_2={y: x for x, y in vocab.items()}
+    #tfidf_vector_array=tfidf_vector.toarray()
 #use the tf idf transformer
     #tfidf_transformer=TfidfTransformer(smooth_idf=True,use_idf=True)
     #tfidf_transformer.fit_transform(paper_list_nostopwords_noauthornames)
 
-    return X, vectorizer.get_feature_names_out()
+    return X, vocab_2 #, vectorizer.get_feature_names_out(), vocab
 
 if __name__ == "__main__":
-    print((tf_idf_transformer('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))
+    print(len(tf_idf_transformer('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[0]))

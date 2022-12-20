@@ -21,6 +21,6 @@ def import_preprocessed_text_file(speicherpfad):
 
 
 if __name__ == "__main__":
-    print(import_preprocessed_text_file('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
+    print(import_preprocessed_text_file('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[0])
     print('----------------------------------')
     print(len(import_preprocessed_text_file('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))

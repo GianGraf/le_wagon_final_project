@@ -61,6 +61,6 @@ def remove_stopwords_and_authornames(speicherpfad):
     return paper_list_nostopwords_noauthornames
 
 if __name__ == "__main__":
-    print(remove_stopwords_and_authornames('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data'))
+    print(remove_stopwords_and_authornames('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')[0])
     print('----------------------------------')
     print(len(remove_stopwords_and_authornames('/Users/giangraf/code/GianGraf/le_wagon_final_project/data/data')))
